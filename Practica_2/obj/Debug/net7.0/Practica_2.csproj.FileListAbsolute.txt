@@ -1,0 +1,15 @@
+/Users/mike/Projects/Practica_2/Practica_2/bin/Debug/net7.0/Practica_2
+/Users/mike/Projects/Practica_2/Practica_2/bin/Debug/net7.0/Practica_2.deps.json
+/Users/mike/Projects/Practica_2/Practica_2/bin/Debug/net7.0/Practica_2.runtimeconfig.json
+/Users/mike/Projects/Practica_2/Practica_2/bin/Debug/net7.0/Practica_2.dll
+/Users/mike/Projects/Practica_2/Practica_2/bin/Debug/net7.0/Practica_2.pdb
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.csproj.AssemblyReference.cache
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.AssemblyInfoInputs.cache
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.AssemblyInfo.cs
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.csproj.CoreCompileInputs.cache
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.dll
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/refint/Practica_2.dll
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.pdb
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/Practica_2.genruntimeconfig.cache
+/Users/mike/Projects/Practica_2/Practica_2/obj/Debug/net7.0/ref/Practica_2.dll
