@@ -6,19 +6,31 @@
         static void Main()
         {
             City Madrid = new City("Madrid");
-            PoliceStation estacion_madrid = new PoliceStation("Estacion Madrid");
+            Console.WriteLine($"City of {Madrid.GetName()} has been created");
 
-            Madrid.SetStation(estacion_madrid);
+            PoliceStation estacion = new PoliceStation("Estación Central");
+            Console.WriteLine($"Police station {estacion.GetName()} has been created");
+
+            Madrid.SetStation(estacion);
 
             Taxi taxi1 = new Taxi("0001 AAA");
             Taxi taxi2 = new Taxi("0002 BBB");
+            Console.WriteLine(taxi1.WriteMessage("Created"));
+            Console.WriteLine(taxi2.WriteMessage("Created"));
+
             PoliceCar policeCar1 = new PoliceCar("0001 CNP");
             PoliceCar policeCar2 = new PoliceCar("0002 CNP");
+            Console.WriteLine(policeCar1.WriteMessage("Created"));
+            Console.WriteLine(policeCar2.WriteMessage("Created"));
+
+            SpeedRadar radar1 = new SpeedRadar();
+            SpeedRadar radar2 = new SpeedRadar();
+
+            Console.WriteLine($"Two radars have been created");
 
 
-            estacion_madrid.RegisterPoliceCar(policeCar1);
-            estacion_madrid.RegisterPoliceCar(policeCar2);
-
+            estacion.RegisterPoliceCar(policeCar1);
+            estacion.RegisterPoliceCar(policeCar2);
 
             Madrid.RegisterTaxiLicense(taxi1);
             Madrid.RegisterTaxiLicense(taxi2);
@@ -26,25 +38,24 @@
             Madrid.ShowRegisteredTaxis();
             Console.WriteLine("     ");
 
+
+            radar1.TriggerRadar(taxi2);
+            string measurement1 = radar1.GetLastReading();
+            Console.WriteLine($"Triggered individual radar. Result: {measurement1}");
+
             Madrid.RemoveTaxiLicense("0001 AAA");
-
-
-
-            Console.WriteLine(taxi1.WriteMessage("Created"));
-            Console.WriteLine(taxi2.WriteMessage("Created"));
-            Console.WriteLine(policeCar1.WriteMessage("Created"));
-            Console.WriteLine(policeCar2.WriteMessage("Created"));
+          
             Console.WriteLine("     ");
 
             policeCar1.StartPatrolling();
             policeCar2.StartPatrolling();
-            policeCar1.UseRadar(taxi1);
 
 
+            policeCar1.UseRadar(taxi2);
+            policeCar2.SetRadar(radar2);
+            policeCar2.UseRadar(taxi2);
 
-
-
-
+              
             taxi2.StartRide();
             policeCar2.UseRadar(taxi2);
             policeCar2.StartPatrolling();
@@ -62,6 +73,7 @@
 
             policeCar1.PrintRadarHistory();
             policeCar2.PrintRadarHistory();
+            
 
         }
     }

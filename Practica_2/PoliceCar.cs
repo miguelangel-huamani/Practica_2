@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using System;
+using System.Diagnostics.Metrics;
 using static System.Collections.Specialized.BitVector32;
 
 namespace Practica_2
@@ -9,7 +10,7 @@ namespace Practica_2
         private const string typeOfVehicle = "Police Car";
         private bool isPatrolling;
         private PoliceStation? policeStation;
-        private SpeedRadar speedRadar;
+        private SpeedRadar? speedRadar;
         private string? infractor_plate;
         private bool chasing;
 
@@ -17,14 +18,31 @@ namespace Practica_2
         public PoliceCar(string plate) : base(typeOfVehicle, plate)
         {
             isPatrolling = false;
-            speedRadar = new SpeedRadar();
             chasing = false;
             infractor_plate = null;
         }
 
-        public void UseRadar(Vehicle vehicle)
+        public void SetRadar(SpeedRadar radar)
         {
-            if (isPatrolling)
+            speedRadar = radar;
+            Console.WriteLine(WriteMessage($"has implemented a radar"));
+
+        }
+
+        public void UseRadar(Vehicle vehicle)
+
+        {
+            if (!isPatrolling)
+            {
+                Console.WriteLine(WriteMessage("is not patrolling"));
+            }
+
+            else if (speedRadar == null)
+            {
+                Console.WriteLine(WriteMessage("has no radar assigned"));
+            }
+
+            else
             {
                 speedRadar.TriggerRadar(vehicle);
                 string measurement = speedRadar.GetLastReading();
@@ -41,19 +59,16 @@ namespace Practica_2
                     {
                         Console.WriteLine(WriteMessage("No police station assigned to this car."));
                     }
+
                 }
             }
-            else
-            {
-                Console.WriteLine(WriteMessage("has no active radar."));
-            }
         }
+
 
         public void SetStation(PoliceStation p)
         {
             policeStation = p;
         }
-
 
         public void SetInfractorPlate(string inf_plate)
         {
@@ -65,7 +80,7 @@ namespace Practica_2
         public void SetChasing()
         {
             chasing = true;
-            Console.WriteLine(WriteMessage($"is chasing vehicle {infractor_plate}"));
+            Console.WriteLine(WriteMessage($"is chasing vehicle with plate: {infractor_plate}"));
 
         }
 

@@ -3,7 +3,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Practica_2
 {
-    class City
+    class City : IMessageWritter
     {
         private string Name;
         public List<PoliceStation> policeStations { get; private set; }
@@ -61,6 +61,8 @@ namespace Practica_2
         {
             return Name;
         }
+        
+
     }
 }
 

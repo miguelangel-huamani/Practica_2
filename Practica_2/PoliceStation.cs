@@ -7,7 +7,7 @@ namespace Practica_2
 {
 	class PoliceStation
 	{
-        public string Name;
+        private string Name;
         public List<PoliceCar> PoliceCars { get; private set; }
 		private bool AlertActive;
 		private City? city;
@@ -18,8 +18,12 @@ namespace Practica_2
 			Name = name;
 			PoliceCars = new List<PoliceCar>();
 			AlertActive = false;
-
 		}
+
+        public string GetName()
+        {
+            return Name;
+        }
 
 		public void RegisterPoliceCar(PoliceCar policeCar)
         {
