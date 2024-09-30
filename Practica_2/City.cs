@@ -3,7 +3,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Practica_2
 {
-    class City : IMessageWritter
+    class City
     {
         private string Name;
         public List<PoliceStation> policeStations { get; private set; }
@@ -19,7 +19,7 @@ namespace Practica_2
         public void SetStation(PoliceStation p)
         {
             policeStations.Add(p);
-            Console.WriteLine($"Police station {p.Name} registered in {Name}.");
+            Console.WriteLine($"Police station {p.GetName()} registered in {Name}.");
             p.SetCity(this);
 
         }

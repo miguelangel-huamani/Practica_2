@@ -4,10 +4,9 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Practica_2
 {
-    class PoliceCar : Vehicle
+    class PoliceCar : RegisteredVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
-        private const string typeOfVehicle = "Police Car";
         private bool isPatrolling;
         private PoliceStation? policeStation;
         private SpeedRadar? speedRadar;
@@ -15,7 +14,7 @@ namespace Practica_2
         private bool chasing;
 
 
-        public PoliceCar(string plate) : base(typeOfVehicle, plate)
+        public PoliceCar(string plate) : base("Taxi", plate)
         {
             isPatrolling = false;
             chasing = false;
@@ -81,7 +80,6 @@ namespace Practica_2
         {
             chasing = true;
             Console.WriteLine(WriteMessage($"is chasing vehicle with plate: {infractor_plate}"));
-
         }
 
 
@@ -118,6 +116,12 @@ namespace Practica_2
 
         public void PrintRadarHistory()
         {
+            if (speedRadar == null)
+            {
+                Console.WriteLine(WriteMessage("No radar assigned. Cannot print speed history."));
+                return;
+            }
+
             Console.WriteLine(WriteMessage("Report radar speed history:"));
             foreach (float speed in speedRadar.SpeedHistory)
             {

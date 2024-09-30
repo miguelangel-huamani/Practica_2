@@ -1,13 +1,12 @@
 ﻿namespace Practica_2
 {
-    class Taxi : Vehicle
+    class Taxi : RegisteredVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances.
-        private static string typeOfVehicle = "Taxi";
         private bool isCarryingPassengers;
         private City? city;
 
-        public Taxi(string plate) : base(typeOfVehicle, plate)
+        public Taxi(string plate) : base("Taxi", plate)
         {
             //Values of atributes are set just when the instance is done if not needed before.
             isCarryingPassengers = false;

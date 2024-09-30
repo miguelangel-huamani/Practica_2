@@ -23,6 +23,11 @@
             Console.WriteLine(policeCar1.WriteMessage("Created"));
             Console.WriteLine(policeCar2.WriteMessage("Created"));
 
+
+            Scooter scooter1 = new Scooter();
+            Console.WriteLine(scooter1.WriteMessage("Created"));
+
+
             SpeedRadar radar1 = new SpeedRadar();
             SpeedRadar radar2 = new SpeedRadar();
 
@@ -54,6 +59,8 @@
             policeCar1.UseRadar(taxi2);
             policeCar2.SetRadar(radar2);
             policeCar2.UseRadar(taxi2);
+
+
 
               
             taxi2.StartRide();
