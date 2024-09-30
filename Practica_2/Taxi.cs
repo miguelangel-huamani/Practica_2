@@ -19,11 +19,11 @@
 
             if (c == null)
             {
-                Console.WriteLine($"Taxi with plate {GetPlate()} unregistered from any city.");
+                Console.WriteLine(WriteMessage("unregistered from any city."));
             }
             else
             {
-                Console.WriteLine($"Taxi registered in {c.GetName()}.");
+                Console.WriteLine(WriteMessage("registered in {c.GetName()}."));
             }
         }
 

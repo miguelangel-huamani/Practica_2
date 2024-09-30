@@ -4,12 +4,13 @@
     {
 
         static void Main()
+
         {
             City Madrid = new City("Madrid");
-            Console.WriteLine($"City of {Madrid.GetName()} has been created");
+            Console.WriteLine(Madrid.WriteMessage("has been created"));
 
             PoliceStation estacion = new PoliceStation("Estación Central");
-            Console.WriteLine($"Police station {estacion.GetName()} has been created");
+            Console.WriteLine(estacion.WriteMessage("has been created"));
 
             Madrid.SetStation(estacion);
 
@@ -30,9 +31,6 @@
 
             SpeedRadar radar1 = new SpeedRadar();
             SpeedRadar radar2 = new SpeedRadar();
-
-            Console.WriteLine($"Two radars have been created");
-
 
             estacion.RegisterPoliceCar(policeCar1);
             estacion.RegisterPoliceCar(policeCar2);

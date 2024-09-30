@@ -5,7 +5,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Practica_2
 {
-	class PoliceStation
+	class PoliceStation: IMessageWritter
 	{
         private string Name;
         public List<PoliceCar> PoliceCars { get; private set; }
@@ -19,6 +19,11 @@ namespace Practica_2
 			PoliceCars = new List<PoliceCar>();
 			AlertActive = false;
 		}
+
+        public override string ToString()
+        {
+            return $"{GetName()}";
+        }
 
         public string GetName()
         {
@@ -51,11 +56,16 @@ namespace Practica_2
 
         }
 
+        public string WriteMessage(string message)
+        {
+            return $"{this}: {message}";
+        }
 
 
 
 
 
-	}
+
+    }
 }
 

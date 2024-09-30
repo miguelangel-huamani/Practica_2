@@ -56,7 +56,7 @@ namespace Practica_2
                     }
                     else
                     {
-                        Console.WriteLine(WriteMessage("No police station assigned to this car."));
+                        Console.WriteLine(WriteMessage("has no police station assigned."));
                     }
 
                 }
@@ -118,7 +118,7 @@ namespace Practica_2
         {
             if (speedRadar == null)
             {
-                Console.WriteLine(WriteMessage("No radar assigned. Cannot print speed history."));
+                Console.WriteLine(WriteMessage("has no radar assigned. Cannot print speed history."));
                 return;
             }
 

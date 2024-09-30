@@ -3,7 +3,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Practica_2
 {
-    class City
+    class City : IMessageWritter
     {
         private string Name;
         public List<PoliceStation> policeStations { get; private set; }
@@ -14,6 +14,12 @@ namespace Practica_2
             Name = name;
             RegisteredTaxis = new List<Taxi>();
             policeStations = new List<PoliceStation>();
+        }
+
+
+        public override string ToString()
+        {
+            return $"{GetName()}";
         }
 
         public void SetStation(PoliceStation p)
@@ -61,7 +67,12 @@ namespace Practica_2
         {
             return Name;
         }
-        
+
+        public string WriteMessage(string message)
+        {
+            return $"{this}: {message}";
+        }
+
 
     }
 }
