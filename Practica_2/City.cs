@@ -33,7 +33,6 @@ namespace Practica_2
         public void RegisterTaxiLicense(Taxi taxi)
         {
             RegisteredTaxis.Add(taxi);
-            Console.WriteLine($"Taxi with plate {taxi.GetPlate()} registered in {Name}.");
             taxi.SetCity(this);
         }
 

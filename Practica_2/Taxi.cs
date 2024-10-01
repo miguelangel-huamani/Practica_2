@@ -23,7 +23,7 @@
             }
             else
             {
-                Console.WriteLine(WriteMessage("registered in {c.GetName()}."));
+                Console.WriteLine(WriteMessage($"registered in {c.GetName()}."));
             }
         }
 

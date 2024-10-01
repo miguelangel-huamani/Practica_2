@@ -14,7 +14,7 @@ namespace Practica_2
         private bool chasing;
 
 
-        public PoliceCar(string plate) : base("Taxi", plate)
+        public PoliceCar(string plate) : base("Police Car", plate)
         {
             isPatrolling = false;
             chasing = false;
@@ -76,6 +76,12 @@ namespace Practica_2
             SetChasing();
         }
 
+        public string GetInfractorPlate()
+        {
+            return infractor_plate ?? "No infractor plate registered";
+        }
+
+
         public void SetChasing()
         {
             chasing = true;
@@ -125,7 +131,7 @@ namespace Practica_2
             Console.WriteLine(WriteMessage("Report radar speed history:"));
             foreach (float speed in speedRadar.SpeedHistory)
             {
-                Console.WriteLine(speed);
+                Console.WriteLine($"{speed} km/h");
             }
         }
 
